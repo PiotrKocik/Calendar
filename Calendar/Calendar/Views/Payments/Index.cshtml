@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Calendar.Infrastructure.ViewModels.PaymentsViewModels>
+
+@{
+    ViewBag.Title = "Wpłaty";
+}
+
+<h2>Kalendarz wpłat</h2>
+<table class="table">
+    <td></td>
+    <td></td>
+    @{ var list = Model.ToList();
+        for (int i = 0; i < 12; i++)
+        {
+
+            <td>
+                @Html.DisplayFor(model => list[i].MonthName)
+            </td>
+
+        }
+    }
+    <tr></tr>
+    @{ var Names = Model.ToList();
+        for (int i = 0; i < Names.Count; i += 12)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => Names[i].Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => Names[i].Price)
+                </td>
+                @for (int j = i; j < i+12; j++)
+                {
+                    <td class="success">@Html.CheckBoxFor(model => Names[j].Check)</td>
+                }
+            </tr>
+
+
+        }
+    }
+
+    @*@foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonthName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Check)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonthsId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }*@
+    @*<tr>
+        <td align="center" class="info"></td>
+
+        @foreach (var item in Model)
+        {
+            <td align="center" class="info">
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "label label-success" })
+            </td>
+        }
+    </tr>*@
+</table>
+  

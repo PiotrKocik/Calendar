@@ -1,0 +1,17 @@
+C:\Users\Piotr\source\repos\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.deps.json
+C:\Users\Piotr\source\repos\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.runtimeconfig.json
+C:\Users\Piotr\source\repos\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.runtimeconfig.dev.json
+C:\Users\Piotr\source\repos\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.dll
+C:\Users\Piotr\source\repos\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.pdb
+C:\Users\Piotr\source\repos\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.Core.dll
+C:\Users\Piotr\source\repos\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.Infrastructure.dll
+C:\Users\Piotr\source\repos\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.Core.pdb
+C:\Users\Piotr\source\repos\Calendar\Calendar\bin\Debug\netcoreapp2.0\Calendar.Infrastructure.pdb
+C:\Users\Piotr\source\repos\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.csprojResolveAssemblyReference.cache
+C:\Users\Piotr\source\repos\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.csproj.CoreCompileInputs.cache
+C:\Users\Piotr\source\repos\Calendar\Calendar\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Piotr\source\repos\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.AssemblyInfoInputs.cache
+C:\Users\Piotr\source\repos\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.AssemblyInfo.cs
+C:\Users\Piotr\source\repos\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.csproj.CopyComplete
+C:\Users\Piotr\source\repos\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.dll
+C:\Users\Piotr\source\repos\Calendar\Calendar\obj\Debug\netcoreapp2.0\Calendar.pdb
