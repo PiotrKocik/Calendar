@@ -7,7 +7,7 @@ namespace Calendar.Infrastructure.ViewModels
 {
     public class PaymentsViewModels
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string MonthName { get; set; }
         public decimal Price { get; set; }

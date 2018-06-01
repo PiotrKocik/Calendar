@@ -8,7 +8,7 @@ namespace Calendar.Core.Models
 {
     public class Months
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

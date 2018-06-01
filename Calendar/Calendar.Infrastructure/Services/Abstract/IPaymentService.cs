@@ -10,8 +10,9 @@ namespace Calendar.Infrastructure.Services.Abstract
         Task Add(Payments payment);
         Task Delete(Payments payment);
         Task Update(Payments payment);
-        Task<Payments> Get(Guid id);
+        Task<Payments> Get(int id);
         Task<IEnumerable<Payments>> GetAll();
+        Task<IEnumerable<Payments>> GetFilteredPayments(string name);
         Task Save();
         void Dispose();
     }

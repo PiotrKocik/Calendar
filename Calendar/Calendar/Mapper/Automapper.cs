@@ -9,13 +9,15 @@ namespace Calendar.Mapper
         public Automapper()
         {
 
-            this.CreateMap<Payments, PaymentsViewModels>()
-                .ForMember(x => x.MonthName, y => y.MapFrom(z => z.Months.Name))
-                .ForMember(x => x.MonthsId, y => y.MapFrom(z => z.Months.Id));
+            this.CreateMap<Payments, PaymentsViewModels>();
             this.CreateMap<PaymentsViewModels, Payments>()
                 .ForMember(x => x.Months, y => y.Ignore());
-
+            this.CreateMap<PaymentEditViewModels, Payments>()
+                .ForMember(x=>x.MonthName,y=>y.Ignore())
+                .ForMember(x => x.MonthsId, y => y.Ignore());
             this.CreateMap<Months, MonthsViewModels>().ReverseMap();
+            this.CreateMap<PaymentMonthlyCreateViewModels, Payments>()
+                .ForMember(x => x.MonthsId, y => y.Ignore());
 
             this.CreateMap<Payments, PaymentsAddViewModels>();
             this.CreateMap<PaymentsAddViewModels, Payments>()

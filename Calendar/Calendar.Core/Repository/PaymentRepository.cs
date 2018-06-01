@@ -4,6 +4,7 @@ using Calendar.Core.Repository.Abstract;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,7 +35,7 @@ namespace Calendar.Core.Repository
             paymentDbContext.Dispose();
         }
 
-        public async Task<Payments> Get(Guid id)
+        public async Task<Payments> Get(int id)
         {
             return await paymentDbContext.Payments.FirstOrDefaultAsync(x => x.Id == id);
         }
@@ -42,6 +43,11 @@ namespace Calendar.Core.Repository
         public async Task<IEnumerable<Payments>> GetAll()
         {
             return await paymentDbContext.Payments.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Payments>> GetFilteredPayments(string name)
+        {
+            return await paymentDbContext.Payments.Where(x => x.Name == name).ToListAsync();
         }
 
         public async Task SaveChanges()

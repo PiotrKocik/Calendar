@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace Calendar.Controllers
 {
     [Route("api/[controller]/[action]")]
-    public class AccountController
+    public class AccountController : Controller
     {
         private readonly ILogger<AccountController> logger;
         private readonly UserManager<IdentityUser> userManager;
@@ -49,7 +49,8 @@ namespace Calendar.Controllers
             if (result.Succeeded)
             {
                 var appUser = userManager.Users.SingleOrDefault(r => r.Email == model.Email);
-                return await GenerateJwtToken(model.Email, appUser);
+                var GenToken = await GenerateJwtToken(model.Email, appUser);
+                return new { name = model.Email.ToString(), token = GenToken.ToString() };
             }
             throw new ApplicationException("INWALID_LOGIN_ATTEMPT");
         }
@@ -106,6 +107,18 @@ namespace Calendar.Controllers
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+        [HttpGet]
+        public object GetUserClaims()
+        {
+            var identityClaims = (ClaimsIdentity)User.Identity;
+            var identity = (ClaimsIdentity)User.Identity;
+
+
+            var claim1 = identity.Claims.FirstOrDefault(c => c.Type == "UserName");
+
+            var userId = User.Identity.Name;
+            return userId;
         }
 
     }

@@ -19,9 +19,14 @@ namespace Calendar.Infrastructure.Services
             await this.monthsRepository.Delete(months);
         }
 
-        public async Task<Months> Get(Guid id)
+        public async Task<Months> Get(int id)
         {
             return await this.monthsRepository.Get(id);
+        }
+
+        public async Task<Months> GetByName(string name)
+        {
+            return await this.monthsRepository.GetByName(name);
         }
 
         public async Task<IEnumerable<Months>> GetAll()

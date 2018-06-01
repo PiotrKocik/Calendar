@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 
 namespace Calendar.Controllers
 {
+
+    [Authorize]
     [Route("api/[controller]/[action]")]
     public class MonthsController : Controller
     {
@@ -24,7 +26,7 @@ namespace Calendar.Controllers
 
         //GET: Months
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IEnumerable<MonthsViewModels>> GetAll()
         {
             IEnumerable<MonthsViewModels> b;
             try
@@ -32,12 +34,12 @@ namespace Calendar.Controllers
                 b = mapper.Map<IEnumerable<MonthsViewModels>>(await monthsService.GetAll());
             }
             catch { b = null; }
-            return View(b);
+            return b;
         }
 
         //GET: Months/Details/5
         [HttpGet]
-        public async Task<IActionResult> Details(Guid id)
+        public async Task<IActionResult> Details(int id)
         {
             var mappedMonth = mapper.Map<MonthsViewModels>(await monthsService.Get(id));
             return View(mappedMonth);
@@ -46,7 +48,7 @@ namespace Calendar.Controllers
 
         // GET: Months/Edit/5
         [HttpGet]
-        public async Task<IActionResult> Edit(Guid id)
+        public async Task<IActionResult> Edit(int id)
         {
             var toAdd = mapper.Map<MonthsViewModels>(await monthsService.Get(id));
             return View(toAdd);

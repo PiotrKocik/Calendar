@@ -7,7 +7,7 @@ namespace Calendar.Infrastructure.Extensions
 {
     public static class Extensions
     {
-        public static async Task<Payments> GetOrFail(this IPaymentService paymentService, Guid id)
+        public static async Task<Payments> GetOrFail(this IPaymentService paymentService, int id)
         {
             var payment = await paymentService.Get(id);
             if(payment == null)

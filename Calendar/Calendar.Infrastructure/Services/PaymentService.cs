@@ -31,7 +31,7 @@ namespace Calendar.Infrastructure.Services
             _paymentRepository.Dispose();
         }
 
-        public async Task<Payments> Get(Guid id)
+        public async Task<Payments> Get(int id)
         {
             return await _paymentRepository.Get(id);
         }
@@ -39,6 +39,11 @@ namespace Calendar.Infrastructure.Services
         public async Task<IEnumerable<Payments>> GetAll()
         {
             return await _paymentRepository.GetAll();
+        }
+
+        public async Task<IEnumerable<Payments>> GetFilteredPayments(string name)
+        {
+            return await _paymentRepository.GetFilteredPayments(name);
         }
 
         public async Task Save()

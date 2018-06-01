@@ -23,9 +23,14 @@ namespace Calendar.Core.Repository
             await Task.CompletedTask;
         }
 
-        public async Task<Months> Get(Guid id)
+        public async Task<Months> Get(int id)
         {
             return await paymentDbContext.Months.FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<Months> GetByName(string name)
+        {
+            return await paymentDbContext.Months.FirstOrDefaultAsync(x => x.Name == name);
         }
 
         public async Task<IEnumerable<Months>> GetAll()

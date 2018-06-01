@@ -8,12 +8,12 @@ namespace Calendar.Core.Models
 {
     public class Payments
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public int Id { get; set; }
         public string Name { get; set; }
         public string MonthName { get; set; }
         public decimal Price { get; set; }
         public bool Check { get; set; }
-        public Guid MonthsId { get; set; }
+        public int MonthsId { get; set; }
         public virtual Months Months { get; set; }
         //public IEnumerable<Payments> PaymentsList { get; set; }
         //public string Month { get; set; }

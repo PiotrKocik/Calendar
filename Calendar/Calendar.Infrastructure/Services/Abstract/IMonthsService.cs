@@ -9,7 +9,8 @@ namespace Calendar.Infrastructure.Services.Abstract
     {
         Task Delete(Months months);
         Task Update(Months months);
-        Task<Months> Get(Guid id);
+        Task<Months> Get(int id);
+        Task<Months> GetByName(string name);
         Task<IEnumerable<Months>> GetAll();
         Task SaveChanges();
     }
